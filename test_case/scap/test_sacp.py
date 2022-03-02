@@ -1,5 +1,6 @@
 import unittest
-import requests
+import os
+os.sys.path.append(r"D:\sacp\sacp_interface_testing\public")
 import time
 import json
 import serial
@@ -7,6 +8,7 @@ from public.common import *
 class testupload(unittest.TestCase):
     @classmethod
     def setUp(self):
+
         portx = "COM3"  # COM2口用来读数
         bps = 115200
         self.ser = serial.Serial(portx, bps)
@@ -16,7 +18,8 @@ class testupload(unittest.TestCase):
         '''上传3DP的工程文件'''
         if self.ser.isOpen():  # 判断串口是否打开
             print("open success")
-            self.ser.write("G53\n".encode("utf8"))  # 向端口些数据 字符串必须译码
+            self.ser.write("G53\n".encode("utf8"))
+            self.ser.write("G28\n".encode("utf8"))# 向端口些数据 字符串必须译码
             time.sleep(3)
             line = self.ser.read_all()
             print(line)

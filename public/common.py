@@ -14,4 +14,5 @@ def getYamlData():
     allData = yaml.load(file, Loader=yaml.FullLoader)
     file.close()
     return allData
-
+def common():
+    print("common")
