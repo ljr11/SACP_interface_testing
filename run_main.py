@@ -6,11 +6,11 @@ import sys
 sys.path.append("./public/")
 
 # 定义测试用例所在文件夹
-test_case = r'D:\SACP\test_case\scap\\'
+test_case = r'D:\scap\test_case\scap\\'
 # 定义test_list用于查找test_case下面的以test开头的.py文件
 test_list = unittest.defaultTestLoader.discover(test_case, pattern='test*.py')
 # 定义测试报告存放位置
-test_report = r'D:\SACP\report\\'
+test_report = r'D:\scap\report\\'
 
 if __name__ == "__main__":
     now_time = time.strftime("%Y_%m_%d %H_%M_%S")
